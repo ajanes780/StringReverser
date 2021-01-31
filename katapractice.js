@@ -1,5 +1,6 @@
 // this program can handle up to 4 data sets of numbers and letters
 // it will reverse the words and keep the numbers in the same order
+// this is done with out .reverse or .join intentionally
 // data can be entered from the command line via node
 
 let userInput = process.argv.slice(2);
