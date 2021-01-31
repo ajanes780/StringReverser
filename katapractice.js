@@ -23,6 +23,7 @@ const reverse = function (data) {
   if (data[0] === undefined) {
     console.log("Hey bro enter something first okay");
   }
+  // check for numbers and split into two arrays
   for (let i = filtered.length - 1; i >= 0; i--) {
     if (
       filtered[i] !== "1" &&
@@ -41,14 +42,20 @@ const reverse = function (data) {
       outputNumbers.push(filtered[i]);
     }
   }
+  // sort out the numbers array
   let opNumbersSorted = outputNumbers.sort((a, b) => a - b);
+  //add the 2nd number to the middle of the array
   outputLetters.splice(outputLetters.length / 2, 0, outputNumbers[1]);
+  // add a space between the output words
   outputLetters.splice(outputLetters.length / 2 - 1, 0, " ");
   let opLettersString = outputLetters.toString();
+
+  // does the output have numbers ?
   if (outputNumbers[0] === undefined) {
     let option1 = opLettersString.replace(/,/g, "");
     console.log("this is answer with no numbers", option1);
   } else {
+    // this is the final answer
     let answer = opNumbersSorted[0] + opLettersString.replace(/,/g, "");
     console.log(" This is the answer with numbers", answer);
   }
